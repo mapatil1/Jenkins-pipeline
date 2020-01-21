@@ -53,10 +53,10 @@ pipeline {
                     when { expression { commonPipelineEnvironment.configuration.runStage.FRONTEND_UNIT_TESTS } }
                     steps { stageFrontendUnitTests script: this }
                 }
-                stage("NPM Dependency Audit") {
-                    when { expression { commonPipelineEnvironment.configuration.runStage.NPM_AUDIT } }
-                    steps { stageNpmAudit script: this }
-                }
+                // stage("NPM Dependency Audit") {
+                //     when { expression { commonPipelineEnvironment.configuration.runStage.NPM_AUDIT } }
+                //     steps { stageNpmAudit script: this }
+                // }
             }
         }
 
