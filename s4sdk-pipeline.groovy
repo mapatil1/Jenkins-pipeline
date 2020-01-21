@@ -41,10 +41,10 @@ pipeline {
                     when { expression { commonPipelineEnvironment.configuration.runStage.BACKEND_UNIT_TESTS } }
                     steps { stageUnitTests script: this }
                 }
-                stage("Backend Integration Tests") {
-                    when { expression { commonPipelineEnvironment.configuration.runStage.BACKEND_INTEGRATION_TESTS } }
-                    steps { stageBackendIntegrationTests script: this }
-                }
+                // stage("Backend Integration Tests") {
+                //     when { expression { commonPipelineEnvironment.configuration.runStage.BACKEND_INTEGRATION_TESTS } }
+                //     steps { stageBackendIntegrationTests script: this }
+                // }
                 stage("Frontend Integration Tests") {
                     when { expression { commonPipelineEnvironment.configuration.runStage.FRONTEND_INTEGRATION_TESTS } }
                     steps { stageFrontendIntegrationTests script: this }
