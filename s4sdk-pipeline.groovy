@@ -41,22 +41,22 @@ pipeline {
                     when { expression { commonPipelineEnvironment.configuration.runStage.BACKEND_UNIT_TESTS } }
                     steps { stageUnitTests script: this }
                 }
-                // stage("Backend Integration Tests") {
-                //     when { expression { commonPipelineEnvironment.configuration.runStage.BACKEND_INTEGRATION_TESTS } }
-                //     steps { stageBackendIntegrationTests script: this }
-                // }
-                // stage("Frontend Integration Tests") {
-                //     when { expression { commonPipelineEnvironment.configuration.runStage.FRONTEND_INTEGRATION_TESTS } }
-                //     steps { stageFrontendIntegrationTests script: this }
-                // }
-                // stage("Frontend Unit Tests") {
-                //     when { expression { commonPipelineEnvironment.configuration.runStage.FRONTEND_UNIT_TESTS } }
-                //     steps { stageFrontendUnitTests script: this }
-                // }
-                // stage("NPM Dependency Audit") {
-                //     when { expression { commonPipelineEnvironment.configuration.runStage.NPM_AUDIT } }
-                //     steps { stageNpmAudit script: this }
-                // }
+                stage("Backend Integration Tests") {
+                    when { expression { commonPipelineEnvironment.configuration.runStage.BACKEND_INTEGRATION_TESTS } }
+                    steps { stageBackendIntegrationTests script: this }
+                }
+                stage("Frontend Integration Tests") {
+                    when { expression { commonPipelineEnvironment.configuration.runStage.FRONTEND_INTEGRATION_TESTS } }
+                    steps { stageFrontendIntegrationTests script: this }
+                }
+                stage("Frontend Unit Tests") {
+                    when { expression { commonPipelineEnvironment.configuration.runStage.FRONTEND_UNIT_TESTS } }
+                    steps { stageFrontendUnitTests script: this }
+                }
+                stage("NPM Dependency Audit") {
+                    when { expression { commonPipelineEnvironment.configuration.runStage.NPM_AUDIT } }
+                    steps { stageNpmAudit script: this }
+                }
             }
         }
 
