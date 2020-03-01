@@ -123,11 +123,11 @@ pipeline {
         // }
         
 
-        stage('Production Deployment') {
+        //stage('Production Deployment') {
             // when { expression { commonPipelineEnvironment.configuration.runStage.PRODUCTION_DEPLOYMENT } }
             //milestone 80 is set in stageProductionDeployment
-            steps { stageProductionDeployment script: this }
-        }
+        //    steps { stageProductionDeployment script: this }
+     //   }
         
 
     }
