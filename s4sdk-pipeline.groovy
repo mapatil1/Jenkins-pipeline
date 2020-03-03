@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 final def pipelineSdkVersion = 'master'
-
+properties([pipelineTriggers([githubPush()])])
 pipeline {
     agent any
     options {
