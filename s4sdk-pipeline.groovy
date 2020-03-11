@@ -112,20 +112,20 @@ pipeline {
         //     }
         // }
 
-        // stage('Artifact Deployment') {
+         stage('Artifact Deployment') {
         //     when { expression { commonPipelineEnvironment.configuration.runStage.ARTIFACT_DEPLOYMENT } }
-        //     steps {
+             steps {
         //         milestone 70
-        //         stageArtifactDeployment script: this
-        //     }
-        // }
+                 stageArtifactDeployment script: this
+             }
+         }
         
 
-        stage('Production Deployment') {
+        //stage('Production Deployment') {
             // when { expression { commonPipelineEnvironment.configuration.runStage.PRODUCTION_DEPLOYMENT } }
             //milestone 80 is set in stageProductionDeployment
-            steps { stageProductionDeployment script: this }
-        }
+          //  steps { stageProductionDeployment script: this }
+        //}
         
 
     }
